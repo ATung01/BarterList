@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'user/login', to: 'user#login'
+  get 'user/login/:email', to: 'user#login'
   resources :user, only:[:show]
   resources :item, only:[:index]
   resources :transaction, only:[:create, :show]

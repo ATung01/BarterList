@@ -6,7 +6,8 @@ class UserController < ApplicationController
 	end
 
   def login
-    # @user = User.find_or_create_by(username: params[username])
+    @user = User.find_or_create_by(email: params[:email])
+    render json: @user
   end
 
 end
