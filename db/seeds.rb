@@ -16,7 +16,7 @@
 
 users = []
 10.times do |i|
-  users << User.create(name: Faker::RickAndMorty.character, location: Faker::RickAndMorty.location, email: "#{Faker::HeyArnold}@gmail.com" )
+  users << User.create(name: Faker::RickAndMorty.character, email: "#{Faker::HeyArnold}@gmail.com" )
 end
 
 items = []
@@ -24,8 +24,8 @@ items = []
   items << Item.create(name: Faker::Pokemon.name, description: Faker::RickAndMorty.quote, user_id: users[i].id)
 end
 
-trans = []
-
-10.times do |i|
-  trans << Transaction.create(date: Time.now, transactionrating: i, user_id:users[i].id, item_id:items[i].id)
-end
+# trans = []
+#
+# 10.times do |i|
+#   trans << Transaction.create(date: Time.now, user_id:users[i].id, item_id:items[i].id)
+# end
