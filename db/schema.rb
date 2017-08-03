@@ -12,15 +12,6 @@
 
 ActiveRecord::Schema.define(version: 20170802150330) do
 
-  create_table "histories", force: :cascade do |t|
-    t.datetime "transaction"
-    t.integer "transaction_rating"
-    t.integer "user_id"
-    t.integer "item_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "items", force: :cascade do |t|
     t.string "name"
     t.text "description"
@@ -32,11 +23,11 @@ ActiveRecord::Schema.define(version: 20170802150330) do
 
   create_table "transactions", force: :cascade do |t|
     t.datetime "date"
-    t.integer "seller_id"
+    t.integer "user_id"
     t.integer "buyer_id"
-    t.integer "seller_item_id"
+    t.integer "user_item_id"
     t.integer "buyer_item_id"
-    t.boolean "accepted"
+    t.boolean "accepted", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
