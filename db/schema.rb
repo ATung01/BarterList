@@ -32,17 +32,17 @@ ActiveRecord::Schema.define(version: 20170802150330) do
 
   create_table "transactions", force: :cascade do |t|
     t.datetime "date"
-    t.integer "transactionrating"
-    t.integer "user_id"
-    t.integer "item_id"
+    t.integer "seller_id"
+    t.integer "buyer_id"
+    t.integer "seller_item_id"
+    t.integer "buyer_item_id"
+    t.boolean "accepted"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
     t.string "name"
-    t.string "location"
-    t.integer "rating"
     t.string "email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
