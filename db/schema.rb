@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(version: 20170802150330) do
     t.string "name"
     t.text "description"
     t.string "picture"
+    t.boolean "is_post?", default: false
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
